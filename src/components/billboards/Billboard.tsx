@@ -1,8 +1,9 @@
 import Image from "next/image";
+
 import type { Billboard as BillboardType } from "@/types";
 
 interface BillboardProps {
-  data?: BillboardType;
+  data: BillboardType;
   loading?: boolean;
 }
 

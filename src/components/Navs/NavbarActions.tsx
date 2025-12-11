@@ -19,7 +19,7 @@ export default function NavbarActions() {
   return (
     <div className="ml-auto flex items-center gap-x-4">
       <Button
-        variant={"secondary"}
+        variant="secondary"
         className="flex items-center rounded-full px-4 py-2"
       >
         <ShoppingBagIcon className="dark:text-primary size-5 text-white" />
