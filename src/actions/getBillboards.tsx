@@ -3,9 +3,18 @@ import { Billboard } from "@/types";
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/billboards`;
 
 const getBillboards = async (): Promise<Billboard[]> => {
-  const res = await fetch(URL);
+  try {
+    const res = await fetch(URL);
 
-  return res.json();
+    if (!res.ok) {
+      throw new Error(`Failed to fetch billboards: ${res.status}`);
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching billboards:", error);
+    return [];
+  }
 };
 
 export default getBillboards;
