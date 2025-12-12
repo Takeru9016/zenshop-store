@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import { toast } from "sonner";
@@ -9,7 +9,7 @@ import { CartItem, Container, Currency } from "@/components";
 import { useCart } from "@/hooks";
 import { Button } from "@/components/ui/button";
 
-export default function CartPage() {
+function CartContent() {
   const [mounted, setMounted] = useState(false);
   const searchParams = useSearchParams();
   const cart = useCart();
@@ -90,5 +90,13 @@ export default function CartPage() {
         </div>
       </Container>
     </div>
+  );
+}
+
+export default function CartPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartContent />
+    </Suspense>
   );
 }
