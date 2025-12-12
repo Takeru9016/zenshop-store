@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Urbanist, Lora } from "next/font/google";
 
 import "./globals.css";
+
 import { Footer, Navbar } from "@/components";
+import { ModalProvider, ToastProvider } from "@/providers";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -27,6 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${urbanist.variable} ${lora.variable} antialiased`}>
+        <ToastProvider />
+        <ModalProvider />
         <Navbar />
         {children}
         <Footer />

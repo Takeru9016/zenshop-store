@@ -32,7 +32,7 @@ export default function MobileFilter({ sizes, colors }: MobileFilterProps) {
         as="div"
         className="relative z-40 lg:hidden"
       >
-        <div className="bg-opacity-25 fixed inset-0 z-40 w-full overflow-y-auto bg-black" />
+        <div className="bg-opacity-25 fixed inset-0 z-40 w-full overflow-y-auto bg-transparent" />
 
         <div className="fixed inset-0 z-40 flex">
           <DialogPanel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-6">

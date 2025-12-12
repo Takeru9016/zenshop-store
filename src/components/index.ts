@@ -17,3 +17,8 @@ export { default as ProductCard } from "./products/ProductCard";
 export { default as Gallery } from "./products/Gallery";
 export { default as GalleryTab } from "./products/GalleryTab";
 export { default as Info } from "./products/Info";
+
+export { default as Modal } from "./modals/Modal";
+export { default as PreviewModal } from "./modals/PreviewModal";
+
+export { default as CartItem } from "./cart/CartItem";
